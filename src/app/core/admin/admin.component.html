@@ -1,1 +1,43 @@
-<router-outlet></router-outlet>
+<div class="app-container"><mat-toolbar color="primary" class="app-toolbar">
+  <div  class="toolbar-left-container">
+    <div class="toolbar-toggle">
+      <mat-icon mat-button
+       matRipple
+       matRippleRadius="50"
+        (click)="snav.toggle()">
+        menu
+      </mat-icon>
+    </div>
+    <div class="toolbar-title">
+      <span>
+        {{ 'SiCNo' }}
+      </span>
+    </div>
+  </div>
+  <div  class="toolbar-right-container">
+    <div class="user-title">
+      <span>
+        {{'User'}}
+      </span>
+    </div>
+    <div class="user-profile">
+      <!-- <mat-icon matRipple [matMenuTriggerFor]="menu" aria-hidden="false" aria-label="Example heart icon">account_circle</mat-icon> -->
+    </div>
+  </div>
+</mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <!-- <app-loader [ngClass]="{'loader-hidden': !show}">
+      </app-loader> -->
+      <div class="wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

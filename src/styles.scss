@@ -1,4 +1,447 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$color-primary: mat-palette($mat-deep-purple);
+$color-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$color-warn: mat-palette($mat-red);
+$color-success: mat-palette($mat-teal);
+$color-info: mat-palette($mat-light-blue);
+$color-danger: mat-palette($mat-red);
+$color-warning: mat-palette($mat-amber);
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.content-lobby {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+  background: #eee;
+  height: 100%;
+}
+.content-admin {
+  background: #eee;
+  height: 90%;
+}
+.icon-xl {
+  font-size: 9.5rem !important;
+  width: 9.5rem !important;
+  height: 9.5rem !important;
+}
+.width-100 {
+  width: 100% !important;
+}
+.height-100 {
+  height: 100% !important;
+}
+.height-90 {
+  height: 90% !important;
+}
+mat-form-field {
+  font-size: 1rem !important;
+}
+
+.end-h {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-h {
+  display: flex;
+  justify-content: center;
+}
+.row {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.content-login {
+  max-width: 25rem;
+  max-height: 25rem;
+}
+.icon-input {
+  font-size: 1.5rem !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  margin-right: 0.5rem !important;
+}
+.margin-top-1 {
+  margin-top: 1rem;
+}
+.cursor {
+  cursor: pointer;
+}
+.primary {
+  color: mat-color($color-primary);
+}
+.background-primary {
+  background: mat-color($color-primary);
+}
+.danger {
+  color: mat-color($color-danger);
+}
+.background-danger {
+  background: mat-color($color-danger);
+}
+.success {
+  color: mat-color($color-success);
+}
+.background-success {
+  background: mat-color($color-success);
+}
+.info {
+  color: mat-color($color-info);
+}
+.background-info {
+  background: mat-color($color-info);
+}
+.warning {
+  color: mat-color($color-warning);
+}
+.background-warning {
+  background: mat-color($color-warning);
+}
+.bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.fab-button-br {
+  position: fixed !important;
+  bottom: 1rem;
+  right: 1rem;
+  color: #ffffff !important;
+}
+mat-form-field {
+  width: 100%;
+}
+.margin-lr-1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.columns {
+  display: flex;
+  flex-direction: column;
+}
+.avatar {
+  height: 5rem !important;
+  width: 5rem !important;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  font-size: 5rem !important;
+}
+.height-auto {
+  height: auto !important;
+}
+.link-primary {
+  color: mat-color($color-primary);
+  font-weight: bold;
+  text-decoration: underline;
+}
+.link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.margin-bt-1 {
+  margin-bottom: -1rem;
+}
+mat-icon {
+  margin: 0px !important;
+}
+.icon-toolbar {
+  border-radius: 50%;
+  height: 2rem !important;
+  width: 2rem !important;
+  line-height: 2rem;
+}
+.mat-header-table {
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+//MENU
+.admin-container {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+
+
+.example-sidenav {
+  padding: 20px;
+}
+
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+//FIN MENU
+
+.white {
+  color: #ffffff !important;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+.padding-0 {
+  padding: 0px !important;
+}
+.double-input {
+  padding: 0 0 0 1rem;
+}
+.scroll-65 {
+  overflow-y: auto;
+  max-height: 45vh;
+}
+.mat-horizontal-content-container {
+  max-height: 50vh;
+}
+
+.nav-item-expansion{
+  box-shadow: none !important;
+  mat-expansion-panel-header{
+    padding: 0px !important;
+    padding-right: 20px !important;
+  }
+  .nav-expansion-tree{
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    padding: 10px 0px;
+    .nav-item-text{
+      padding-top: 2px;
+      width: 100%;
+    }
+  }
+}
+
+.nav-item:hover,
+.nav-item-expansion
+.nav-item:hover,
+.nav-expansion-tree:hover,
+.mat-menu-item:hover{
+cursor: pointer;
+color: #2f8633;
+background-color: rgba(0, 0, 0, .05);
+}
+
+.nav-item{
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  padding: 10px 20px;
+  outline: none;
+  width: 100%;
+}
+.nav-item-icon{
+  padding-right: 6px;
+}
+.nav-item-text{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.mat-menu-item{
+  outline: none !important;
+}
+
+mat-sidenav{
+  min-width: 240px;
+}
+
+.width-10r {
+  width: 10rem;
+}
+
+.title-lobby {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: sans-serif;
+}
+.flex {
+  display: flex;
+}
+
+.wrapper{
+  padding: 30px;
+}
+
+.table-container {
+  .table-wrap {
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  mat-paginator {
+    width: 100%;
+  }
+}
+
+.field-reduce{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+@media (max-width: 700px) {
+  .field-reduce {
+    width: 130px;
+  }
+}
+@media (max-width: 480px) {
+  .field-reduce {
+    width: 80px;
+  }
+}
+
+.clickeable {
+  color: #4caf50;
+  cursor: pointer;
+}
+
+.clickeable:hover{
+  color: #2f8633;
+}
+
+.content-header{
+  width: 100%;
+  font-size: 24px;
+  padding: 5px 0px;
+  display: flex;
+}
+.mat-dialog-actions{
+  justify-content: flex-end;
+}
+
+.mat-dialog-actions .mat-button-base+.mat-button-base {
+  margin-left: 0px !important;
+}
+@media screen and (max-width: 445px){
+  .modal-action-button{
+    width: 100%;
+  }
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+mat-toolbar{
+  position: relative !important;
+  justify-content: space-between;
+}
+
+.toolbar-left-container {
+  display: flex;
+  align-items: center;
+}
+.toolbar-right-container {
+  display: flex;
+  align-items: center;
+}
+.toolbar-title{
+  span{
+    color: white;
+    font-size: 24px;
+  }
+}
+.toolbar-toggle{
+  padding-right: 20px;
+  padding-top: 8px;
+  mat-icon{
+    color: white;
+  }
+}
+.toolbar-toggle:hover{
+  mat-icon{
+    cursor: pointer;
+  }
+}
+
+.user-profile{
+  padding-top: 8px;
+  padding-left: 10px;
+  mat-icon{
+    color: white;
+  }
+}
+.user-title{
+  span{
+    color: white;
+    font-size: 24px;
+  }
+}
+.user-profile:hover{
+  mat-icon{
+    cursor: pointer;
+  }
+}
+
+.app-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.loader-hidden {
+  display: none !important;
+}
+
+.text {
+  &.end {
+    text-align: end;
+  }
+}
