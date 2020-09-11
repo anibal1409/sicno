@@ -6,7 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [AdminComponent],
@@ -17,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
+    MatExpansionModule,
+    MatListModule,
   ]
 })
 export class AdminModule { }

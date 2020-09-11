@@ -14,20 +14,155 @@
       </span>
     </div>
   </div>
-  <div  class="toolbar-right-container">
+  <!-- <div  class="toolbar-right-container">
     <div class="user-title">
       <span>
         {{'User'}}
       </span>
     </div>
     <div class="user-profile">
-      <!-- <mat-icon matRipple [matMenuTriggerFor]="menu" aria-hidden="false" aria-label="Example heart icon">account_circle</mat-icon> -->
+      <mat-icon matRipple [matMenuTriggerFor]="menu" aria-hidden="false" aria-label="Example heart icon">account_circle</mat-icon>
     </div>
-  </div>
+  </div> -->
 </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #snav>
+      <mat-nav-list>
+
+        <div class="nav-item" mat-list-item [routerLink]="true">
+          <div class="nav-item-icon">
+            <mat-icon matRipple>home</mat-icon>
+          </div>
+          <div class="nav-item-text">
+            <span>Inicio</span>
+          </div>
+        </div>
+
+        <div class="nav-item" mat-list-item [routerLink]="true">
+          <div class="nav-item-icon">
+            <mat-icon matRipple>group</mat-icon>
+          </div>
+          <div class="nav-item-text">
+            <span>Personal</span>
+          </div>
+        </div>
+
+        <div class="nav-item" mat-list-item [routerLink]="true">
+          <div class="nav-item-icon">
+            <mat-icon matRipple>apps</mat-icon>
+          </div>
+          <div class="nav-item-text">
+            <span>Nomina</span>
+          </div>
+        </div>
+
+        <!-- <mat-expansion-panel class="nav-item-expansion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div class="nav-item" mat-list-item>
+                <div class="nav-item-icon">
+                  <mat-icon matRipple>spa</mat-icon>
+                </div>
+                <div class="nav-item-text">
+                  <span>Cultivos</span>
+                </div>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="nav-expansion-tree" mat-list-item [routerLink]="true">
+            <div class="nav-item-icon">
+              <mat-icon matRipple>toc</mat-icon>
+            </div>
+            <div class="nav-item-text">
+              <span>Lista</span>
+            </div>
+          </div>
+
+          <div class="nav-expansion-tree" mat-list-item [routerLink]="true">
+            <div class="nav-item-icon">
+              <mat-icon matRipple>menu_book</mat-icon>
+            </div>
+            <div class="nav-item-text">
+              <span>Documentación</span>
+            </div>
+          </div>
+        
+        </mat-expansion-panel>
+
+        <div class="nav-item" mat-list-item [routerLink]="true">
+          <div class="nav-item-icon">
+            <mat-icon matRipple>assignment</mat-icon>
+          </div>
+          <div class="nav-item-text">
+            <span>Estudios</span>
+          </div>
+        </div>
+        
+        <mat-expansion-panel class="nav-item-expansion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div class="nav-item" mat-list-item>
+                <div class="nav-item-icon">
+                  <mat-icon matRipple>location_on</mat-icon>
+                </div>
+                <div class="nav-item-text">
+                  <span>Sectores</span>
+                </div>
+              </div>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <div class="nav-expansion-tree" mat-list-item [routerLink]="true">
+            <div class="nav-item-icon">
+              <mat-icon matRipple>toc</mat-icon>
+            </div>
+            <div class="nav-item-text">
+              <span>Lista</span>
+            </div>
+          </div>
+
+          <div class="nav-expansion-tree" mat-list-item [routerLink]="true">
+            <div class="nav-item-icon">
+              <mat-icon matRipple>map</mat-icon>
+            </div>
+            <div class="nav-item-text">
+              <span>Localidades</span>
+            </div>
+          </div>
+
+          <div class="nav-expansion-tree" mat-list-item [routerLink]="true">
+            <div class="nav-item-icon">
+              <mat-icon matRipple>graphic_eq</mat-icon>
+            </div>
+            <div class="nav-item-text">
+              <span>Gráficas</span>
+            </div>
+          </div>
+        
+        </mat-expansion-panel>
+
+        <div class="nav-item" mat-list-item [routerLink]="true">
+          <div class="nav-item-icon">
+            <mat-icon matRipple>texture</mat-icon>
+          </div>
+          <div class="nav-item-text">
+            <span>Texturas</span>
+          </div>
+        </div>
+
+        <div class="nav-item" mat-list-item [routerLink]="true">
+          <div class="nav-item-icon">
+            <mat-icon matRipple>assignment_ind</mat-icon>
+          </div>
+          <div class="nav-item-text">
+            <span>Usuarios</span>
+          </div>
+        </div>
+         -->
+
+      </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>

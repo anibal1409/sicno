@@ -6,7 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
-    children: []
+    children: [
+      {
+        path: 'payroll',
+        loadChildren: () => import('./payrol/payrol.module').then(m => m.PayrolModule),
+      },
+    ]
   }
 ];
 

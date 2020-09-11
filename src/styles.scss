@@ -261,7 +261,7 @@ td, th {
 .nav-expansion-tree:hover,
 .mat-menu-item:hover{
 cursor: pointer;
-color: #2f8633;
+color: mat-color($color-primary);
 background-color: rgba(0, 0, 0, .05);
 }
 
@@ -271,15 +271,19 @@ background-color: rgba(0, 0, 0, .05);
   justify-content: flex-start;
   padding: 10px 20px;
   outline: none;
-  width: 100%;
+  width: inherit;
 }
 .nav-item-icon{
   padding-right: 6px;
+  display: flex;
+  align-items: center;
 }
 .nav-item-text{
   font-family: Roboto, "Helvetica Neue", sans-serif;
   font-size: 18px;
   font-weight: 400;
+  display: flex;
+  align-items: center;
 }
 
 .mat-menu-item{
@@ -336,12 +340,13 @@ mat-sidenav{
 }
 
 .clickeable {
-  color: #4caf50;
+  color: mat-color($color-primary);
   cursor: pointer;
 }
 
 .clickeable:hover{
-  color: #2f8633;
+  color: mat-color($color-primary);
+  text-decoration: underline;
 }
 
 .content-header{
@@ -349,6 +354,7 @@ mat-sidenav{
   font-size: 24px;
   padding: 5px 0px;
   display: flex;
+  margin-bottom: 24px;
 }
 .mat-dialog-actions{
   justify-content: flex-end;
