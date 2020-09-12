@@ -5,7 +5,6 @@ export interface IPeriod {
   dateFrom: string;
   dateTo: string;
   date: string;
-  personalId: string[];
 }
 
 export enum PeriodField {

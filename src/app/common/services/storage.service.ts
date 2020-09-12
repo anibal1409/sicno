@@ -23,7 +23,7 @@ export class StorageService {
     }
   }
 
-  static GetItem<T = any>(key: string, parse = false): T {
+  static GetItem<T = any>(key: string, parse = true): T {
     const storage = localStorage.getItem(key);
 
     if (parse && storage) {

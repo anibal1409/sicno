@@ -1,4 +1,4 @@
-import { IPersonal } from '../interfaces';
+import { IPersonal, PersonalStatus } from '../interfaces';
 import { Department } from './department';
 import { Position } from './position';
 
@@ -18,6 +18,7 @@ export const personalJSON: IPersonal[] = [
     position: Position.Jefe,
     profession: '',
     salary: minimumSalary * 3,
+    status: PersonalStatus.Active,
   },
   {
     id: '2',
@@ -30,6 +31,7 @@ export const personalJSON: IPersonal[] = [
     position: Position.Asistente,
     profession: '',
     salary: minimumSalary * 2,
+    status: PersonalStatus.Active,
   },
   {
     id: '3',
@@ -42,6 +44,7 @@ export const personalJSON: IPersonal[] = [
     position: Position.Integral,
     profession: '',
     salary: minimumSalary * 1.5,
+    status: PersonalStatus.Active,
   },
   {
     id: '4',
@@ -54,9 +57,10 @@ export const personalJSON: IPersonal[] = [
     position: Position.Jefe,
     profession: '',
     salary: minimumSalary * 3,
+    status: PersonalStatus.Active,
   },
   {
-    id: '2',
+    id: '5',
     name: 'Pedro',
     lastName: 'Picapiedras',
     dateBirth: '1995-01-20',
@@ -66,5 +70,6 @@ export const personalJSON: IPersonal[] = [
     position: Position.Asistente,
     profession: '',
     salary: minimumSalary * 2,
+    status: PersonalStatus.Active,
   },
 ];

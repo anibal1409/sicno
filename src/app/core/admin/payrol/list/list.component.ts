@@ -7,6 +7,7 @@ import { Subscription } from 'rxjs';
 import { IPeriod, PeriodField } from '@common/interfaces';
 import { MatDialog } from '@angular/material/dialog';
 import { FormPayrollComponent } from '../form/form.component';
+import { deductionJSON, Deductions } from '../../../../common/data';
 
 @Component({
   selector: 'app-list',
@@ -25,7 +26,6 @@ export class ListPayrollComponent extends CustomComponent implements OnInit, OnD
       dateTo: '2020-09-15',
       deductions: 5000,
       salaries: 55000,
-      personalId: ['', ''],
     }
   ];
   itemsSubs = new Subscription();

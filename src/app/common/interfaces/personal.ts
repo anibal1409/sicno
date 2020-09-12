@@ -1,3 +1,10 @@
+export enum PersonalStatus {
+  Active = 'Activo',
+  Inactive = 'Inactivo',
+  Holidays = 'Vacaciones',
+}
+
+
 export interface IPersonal {
   id: string;
   name: string;
@@ -9,4 +16,5 @@ export interface IPersonal {
   salary: number;
   profession: string;
   address: string;
+  status: PersonalStatus;
 }
