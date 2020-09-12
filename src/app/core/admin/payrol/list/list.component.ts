@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CustomComponent } from '@common/class';
 import { Subscription } from 'rxjs';
-import { IPayroll, PayrollField } from '@common/interfaces';
+import { IPeriod, PeriodField } from '@common/interfaces';
 import { MatDialog } from '@angular/material/dialog';
 import { FormPayrollComponent } from '../form/form.component';
 
@@ -16,8 +16,8 @@ import { FormPayrollComponent } from '../form/form.component';
 export class ListPayrollComponent extends CustomComponent implements OnInit, OnDestroy {
 
   displayedColumns: string[] = ['period', 'salaries', 'deductions', 'total'];
-  dataSource: MatTableDataSource<IPayroll>;
-  items: IPayroll[] = [
+  dataSource: MatTableDataSource<IPeriod>;
+  items: IPeriod[] = [
     {
       id: '1',
       date: '2020-09-15',
@@ -29,7 +29,7 @@ export class ListPayrollComponent extends CustomComponent implements OnInit, OnD
     }
   ];
   itemsSubs = new Subscription();
-  PayrollField = PayrollField;
+  PayrollField = PeriodField;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -49,7 +49,7 @@ export class ListPayrollComponent extends CustomComponent implements OnInit, OnD
     this.itemsSubs.unsubscribe();
   }
 
-  DialogeForm(dataUpd?: IPayroll) {
+  DialogeForm(dataUpd?: IPeriod) {
     const dialogRef = this.dialoge.open(FormPayrollComponent, {
       width: '40rem',
       disableClose: true,

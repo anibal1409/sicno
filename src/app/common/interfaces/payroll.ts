@@ -1,4 +1,4 @@
-export interface IPayroll {
+export interface IPeriod {
   id: string;
   salaries: number;
   deductions: number;
@@ -8,7 +8,7 @@ export interface IPayroll {
   personalId: string[];
 }
 
-export enum PayrollField {
+export enum PeriodField {
   id = 'id',
   salaries = 'salaries',
   deductions = 'deductions',

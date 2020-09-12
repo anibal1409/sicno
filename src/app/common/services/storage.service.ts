@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { authStorage } from 'src/app/common/constants/storage.constant';
 
 @Injectable({
   providedIn: 'root'
@@ -51,14 +50,5 @@ export class StorageService {
     if (StorageService.GetItem(key) === null) {
       StorageService.SetItem(key, data);
     }
-  }
-
-  public get apiAuthorization() {
-    return StorageService.GetItem(authStorage, true);
-  }
-
-
-  public DeleteAuthorization() {
-    StorageService.DeleteItem(authStorage);
   }
 }

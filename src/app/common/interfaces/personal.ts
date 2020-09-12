@@ -1,10 +1,12 @@
 export interface IPersonal {
   id: string;
-  payment: number;
-  deductions: number;
-  total: number;
-  dateFrom: string;
-  dateTo: string;
-  date: string;
-  personalId: string[];
+  name: string;
+  lastName: string;
+  dateBirth: string;
+  dateAdmission: string;
+  position: string;
+  departmanet: string;
+  salary: number;
+  profession: string;
+  address: string;
 }

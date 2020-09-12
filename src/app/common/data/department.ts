@@ -1,4 +1,4 @@
-export const DepartmentKey = 'Department';
+export const departmentKey = 'Department';
 
 export enum Department {
   RRHH = 'Recursos humanos',
@@ -7,7 +7,7 @@ export enum Department {
   Operaciones = 'Operaciones'
 }
 
-export const DepartmentJSON = [
+export const departmentJSON = [
   Department.Comercial,
   Department.Finanzas,
   Department.Operaciones,

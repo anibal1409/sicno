@@ -12,14 +12,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatInputModule } from '@angular/material/input';
 
-
-import { ListPayrollComponent } from './list/list.component';
-import { FormPayrollComponent } from './form/form.component';
 import { EmptyModule } from '@common/components';
 import { PayrollRoutingModule } from './payroll-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ReportComponent } from './components/report/report.component';
-
+import { FormPayrollComponent } from './form/form.component';
+import { ListPayrollComponent } from './list/list.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [ListPayrollComponent, FormPayrollComponent, ReportComponent],
@@ -39,6 +37,6 @@ import { ReportComponent } from './components/report/report.component';
     MatDatepickerModule,
     MatMomentDateModule,
     MatInputModule,
-  ]
+  ],
 })
-export class PayrolModule { }
+export class PayrolModule {}
