@@ -8,18 +8,25 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { MatInputModule } from '@angular/material/input';
 
 
 import { ListPayrollComponent } from './list/list.component';
 import { FormPayrollComponent } from './form/form.component';
 import { EmptyModule } from '@common/components';
 import { PayrollRoutingModule } from './payroll-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReportComponent } from './components/report/report.component';
 
 
 @NgModule({
-  declarations: [ListPayrollComponent, FormPayrollComponent],
+  declarations: [ListPayrollComponent, FormPayrollComponent, ReportComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     PayrollRoutingModule,
     EmptyModule,
     MatTableModule,
@@ -29,6 +36,9 @@ import { PayrollRoutingModule } from './payroll-routing.module';
     MatIconModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatInputModule,
   ]
 })
 export class PayrolModule { }

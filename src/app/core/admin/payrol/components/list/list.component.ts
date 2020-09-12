@@ -6,6 +6,7 @@ import { CustomComponent } from '@common/class';
 import { Subscription } from 'rxjs';
 import { IPayroll, PayrollField } from '@common/interfaces';
 import { MatDialog } from '@angular/material/dialog';
+import { FormPayrollComponent } from '../form/form.component';
 
 @Component({
   selector: 'app-list',
@@ -49,15 +50,15 @@ export class ListPayrollComponent extends CustomComponent implements OnInit, OnD
   }
 
   DialogeForm(dataUpd?: IPayroll) {
-    // const dialogRef = this.dialoge.open(UserFormComponent, {
-    //   width: '40rem',
-    //   disableClose: true,
-    //   data: dataUpd ? dataUpd : null
-    // });
+    const dialogRef = this.dialoge.open(FormPayrollComponent, {
+      width: '40rem',
+      disableClose: true,
+      data: dataUpd ? dataUpd : null
+    });
 
-    // dialogRef.afterClosed().subscribe(result => {
-    //   console.log('The dialog was closed', result);
-    // });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
 
   }
 

@@ -6,7 +6,7 @@
   <mat-icon matPrefix class="primary icon-input">search</mat-icon>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
 </mat-form-field> -->
-<div class="table-container" *ngIf="!items.length; else empty">
+<div class="table-container" *ngIf="items.length; else empty">
   <div class="table-wrap">
     <table mat-table [dataSource]="dataSource" matSort>
   
