@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { deductionJSON, deductions, Deductions, Department, paymentnKey, periodKey, personalKey } from '../data';
+import { deductionJSON, deductions, Deductions, Department, paymentnKey, periodKey, personalJSON, personalKey } from '../data';
 import { IDeduction, IPayment, IPaymentDeduction, IPeriod, IPersonal, PersonalStatus } from '../interfaces';
 import { StorageService } from './storage.service';
-import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PayrollManagementService {
-  private countPayment = 0;
   private deductionsSourc = new BehaviorSubject<IDeduction[]>([]);
   deductions$ = this.deductionsSourc.asObservable();
 
@@ -22,20 +20,25 @@ export class PayrollManagementService {
   private paymentsSourc = new BehaviorSubject<IPayment[]>([]);
   payments$ = this.paymentsSourc.asObservable();
 
-
-
-  Department = Department;
-  PersonalStatus = PersonalStatus;
-
-
-  constructor() { }
+  constructor() {
+    this.init();
+  }
 
   init() {
-    const data = StorageService.GetItem(personalKey);
-    if (data) {
-
+    const personal = this.storagePersonal;
+    if (personal) {
+      this.personal =  personal;
     } else {
-
+      this.personal =  personalJSON;
+      this.storagePersonal = personalJSON;
+    }
+    const payment = this.storagePayment;
+    if (payment) {
+      this.payments =  payment;
+    }
+    const period = this.storagePeriod;
+    if (period) {
+      this.periods =  period;
     }
   }
 
@@ -51,6 +54,7 @@ export class PayrollManagementService {
   }
   public set personal(value) {
     this.personalSourc.next(value);
+    this.storagePersonal = value;
   }
 
   public get payments() {
@@ -58,6 +62,7 @@ export class PayrollManagementService {
   }
   public set payments(value) {
     this.paymentsSourc.next(value);
+    this.storagePayment = value;
   }
 
   public get periods() {
@@ -65,6 +70,7 @@ export class PayrollManagementService {
   }
   public set periods(value) {
     this.periodsSourc.next(value);
+    this.storagePeriod = value;
   }
 
   addPeriod(dateFrom: string, dateTo: string) {
@@ -73,6 +79,7 @@ export class PayrollManagementService {
     const periods = this.periods;
     const amountPayment = this.payments.length;
     const amountPeriod = this.periods.length + 1;
+    console.log('this.periods.length', this.periods.length);
     let totalSalary = 0;
     let totalDeduction = 0;
     personal.forEach(
@@ -118,38 +125,34 @@ export class PayrollManagementService {
       deductions: totalDeduction,
       id: amountPeriod.toString()
     });
-    this.storagePayment = payments;
-    this.storagePeriod = periods;
+    this.periods = periods;
+    this.payments = payments;
   }
 
-  generatePayment() {
-
-  }
-
-  get storagePersonal() {
+  private get storagePersonal() {
     return StorageService.GetItem(personalKey);
   }
 
-  get storagePeriod() {
+  private get storagePeriod() {
     return StorageService.GetItem(periodKey);
   }
 
-  get storagePayment() {
+  private get storagePayment() {
     return StorageService.GetItem(paymentnKey);
   }
 
   // tslint:disable-next-line: adjacent-overload-signatures
-  set storagePersonal(personal: IPersonal[]) {
+  private set storagePersonal(personal: IPersonal[]) {
     StorageService.SetItem(personalKey, personal);
   }
 
   // tslint:disable-next-line: adjacent-overload-signatures
-  set storagePayment(payment: IPayment[]) {
+  private set storagePayment(payment: IPayment[]) {
     StorageService.SetItem(paymentnKey, payment);
   }
 
   // tslint:disable-next-line: adjacent-overload-signatures
-  set storagePeriod(period: IPeriod[]) {
+  private set storagePeriod(period: IPeriod[]) {
     StorageService.SetItem(periodKey, period);
   }
 

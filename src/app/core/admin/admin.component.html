@@ -8,22 +8,23 @@
         menu
       </mat-icon>
     </div>
+    <!-- <img src="./assets/img/logo.png" alt=""> -->
     <div class="toolbar-title">
       <span>
         {{ 'SiCNo' }}
       </span>
     </div>
   </div>
-  <!-- <div  class="toolbar-right-container">
-    <div class="user-title">
+  <div  class="toolbar-right-container">
+    <!-- <div class="user-title">
       <span>
         {{'User'}}
       </span>
-    </div>
+    </div> -->
     <div class="user-profile">
-      <mat-icon matRipple [matMenuTriggerFor]="menu" aria-hidden="false" aria-label="Example heart icon">account_circle</mat-icon>
+      <mat-icon matRipple aria-hidden="false" aria-label="Example heart icon">account_circle</mat-icon>
     </div>
-  </div> -->
+  </div>
 </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container">
@@ -48,7 +49,7 @@
           </div>
         </div>
 
-        <div class="nav-item" mat-list-item [routerLink]="true">
+        <div class="nav-item" mat-list-item  (click)="goPayroll()">
           <div class="nav-item-icon">
             <mat-icon matRipple>apps</mat-icon>
           </div>

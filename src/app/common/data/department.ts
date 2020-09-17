@@ -7,6 +7,13 @@ export enum Department {
   Operaciones = 'Operaciones'
 }
 
+export const nameDepartament = {
+  [Department.Comercial]: 'Departamento comercial',
+  [Department.RRHH]: 'Departamento de recursos humanos',
+  [Department.Finanzas]: 'Departamento de finanzas',
+  [Department.Operaciones]: 'Departamento de operaciones',
+};
+
 export const departmentJSON = [
   Department.Comercial,
   Department.Finanzas,

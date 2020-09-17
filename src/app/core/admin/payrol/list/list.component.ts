@@ -7,7 +7,8 @@ import { Subscription } from 'rxjs';
 import { IPeriod, PeriodField } from '@common/interfaces';
 import { MatDialog } from '@angular/material/dialog';
 import { FormPayrollComponent } from '../form/form.component';
-import { deductionJSON, Deductions } from '../../../../common/data';
+import { PayrollManagementService } from '@common/services';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -30,6 +31,7 @@ export class ListPayrollComponent extends CustomComponent implements OnInit, OnD
   ];
   itemsSubs = new Subscription();
   PayrollField = PeriodField;
+  subsPeriod = new Subscription();
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -37,11 +39,20 @@ export class ListPayrollComponent extends CustomComponent implements OnInit, OnD
 
   constructor(
     private dialoge: MatDialog,
+    private payrollManagementService: PayrollManagementService,
+    private router: Router,
   ) {
     super();
    }
 
   ngOnInit(): void {
+    this.subsPeriod = this.payrollManagementService.periods$.subscribe(
+      (periods) => {
+        this.items = periods;
+        this.dataSource = new MatTableDataSource(this.items);
+      }
+    );
+    this.items = this.payrollManagementService.periods;
     this.dataSource = new MatTableDataSource(this.items);
   }
 
@@ -68,6 +79,10 @@ export class ListPayrollComponent extends CustomComponent implements OnInit, OnD
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  goReport(period: IPeriod) {
+    this.router.navigate([`/admin/payroll/report/${period.id}`]);
   }
 
 }

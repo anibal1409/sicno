@@ -1,0 +1,13 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10rem;
+  .no-shadow {
+    box-shadow: none;
+    max-width: 35%;
+  }
+  .title-lobby {
+    margin: 2rem 0px;
+  }
+}

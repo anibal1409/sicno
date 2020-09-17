@@ -1,0 +1,45 @@
+:host {
+  .content-header {
+    font-weight: 900;
+    mat-icon {
+      font-weight: 900;
+      cursor: pointer;
+    }
+  }
+  .content_report {
+    background: #ffffff;
+    padding: 1.5rem 1rem;
+  }
+  .content_departament {
+    padding: .5rem 0px;
+    .title_report {
+      font-size: 20px;
+      padding-bottom: 1rem;
+      font-weight: 500;
+    }
+    
+  }
+  .row_report {
+    font-size: 1rem;
+    display: flex;
+    padding: 0.25rem 0.5rem;
+    div {
+      &:first-child {
+        width: 40% !important;
+      }
+      width: 20%;
+    }
+  }
+  .total {
+    margin-top: 24px;
+    font-weight: 600;
+    .title {
+      font-size: 24px;
+    }
+  }
+  .head {
+    margin-bottom: 1rem;
+    font-size: 22px;
+    font-weight: 900;
+  }
+}

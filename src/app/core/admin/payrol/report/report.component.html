@@ -1,1 +1,84 @@
-<p>report works!</p>
+<div class="content-header">
+  <mat-icon (click)="goBack()">keyboard_arrow_left</mat-icon>
+  <span>
+    Periodo Nominal
+    {{
+      (period.dateFrom | date: 'dd/MM/yyyy') + ' al ' + (period.dateTo | date: 'dd/MM/yyyy')
+    }}
+  </span>
+</div>
+<div class="content_report">
+  <div class="row_report head">
+    <div>
+      Empleado
+    </div>
+    <div>
+      Salario (Bs)
+    </div>
+    <div>
+      Deducciones (Bs)
+    </div>
+    <div>
+      Total del empleado (Bs)
+    </div>
+  </div>
+  <div 
+    *ngFor="let departament of getItems"
+    class="content_departament"   
+  >
+    <div class="title_report">
+      {{
+        nameDepartament[departament[0]]
+      }}
+    </div>
+    <div *ngFor="let payment of departament[1]" class="row_report">
+      <div>
+        {{
+          payment.personal.name + ' ' + payment.personal.lastName
+        }}
+      </div>
+      <div>
+        {{
+          payment.salary | number: '1.2-2'
+        }}
+      </div>
+      <div>
+        {{
+          (payment.salary - payment.total) | number: '1.2-2'
+        }}
+      </div>
+      <div>
+        {{
+          payment.total | number: '1.2-2'
+        }}
+      </div>
+    </div>
+  </div>
+  
+  <div class="row_report total">
+    <div class="title">
+      Totales
+    </div>
+    <div>
+      {{
+        period.salaries | number: '1.2-2'
+      }}
+    </div>
+    <div>
+      {{
+        period.deductions | number: '1.2-2'
+      }}
+    </div>
+    <div>
+      {{
+        (period.salaries + period.deductions) | number: '1.2-2'
+      }}
+    </div>
+  </div>
+  
+</div>
+
+
+<button mat-fab class="fab-button-br" color="primary" (click)="toPrint()">
+  <mat-icon>print</mat-icon>
+</button>

@@ -1,3 +1,5 @@
+import { IPersonal } from './personal';
+
 export interface IPayment {
   id: string;
   salary: number;
@@ -5,6 +7,7 @@ export interface IPayment {
   periodId: string;
   deduction: IPaymentDeduction[];
   total: number;
+  personal?: IPersonal;
 }
 export interface IPaymentDeduction {
   abbreviation: string;
